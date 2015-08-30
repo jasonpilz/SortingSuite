@@ -2,6 +2,11 @@ require_relative '../lib/bubble_sort.rb'
 
 # This class is used to test the BubbleSort class
 class BubbleSortTest < Minitest::Test
+  def test_sort_empty_array
+    bubble_sort = SortingSuite::BubbleSort.new([])
+    assert_equal [], bubble_sort.sort
+  end
+
   def test_sort_array_of_one
     bubble_sort = SortingSuite::BubbleSort.new([2])
     assert_equal [2], bubble_sort.sort
@@ -50,5 +55,15 @@ class BubbleSortTest < Minitest::Test
   def test_sort_array_of_five_not_sorted
     bubble_sort = SortingSuite::BubbleSort.new([4, 2, 5, 3, 1])
     assert_equal [1, 2, 3, 4, 5], bubble_sort.sort
+  end
+
+  def test_sort_array_o_four_letters_already_sorted
+    bubble_sort = SortingSuite::BubbleSort.new(%w(a b c d))
+    assert_equal %w(a b c d), bubble_sort.sort
+  end
+
+  def test_sort_array_of_four_letters_not_sorted
+    bubble_sort = SortingSuite::BubbleSort.new(%w(d a b c))
+    assert_equal %w(a b c d), bubble_sort.sort
   end
 end

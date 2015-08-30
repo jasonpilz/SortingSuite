@@ -1,39 +1,39 @@
 module SortingSuite
-  # This class is used to sort a given array of numbers
+  # This class is used to sort an array using 'Bubbling'
   class BubbleSort
-    attr_reader :numbers
+    attr_reader :set
 
-    def initialize(numbers)
-      @numbers = numbers
+    def initialize(set)
+      @set = set
     end
 
     def sort
-      # Check if sorting is needed
-      return numbers if numbers.size < 2
-
-      bubble = numbers.size
-
-      (bubble).times do
+      (set.count).times do
         index = 0
-        until index == numbers.count - 1
-          previous = numbers[index]
-          current = numbers[index + 1]
+        until index == set.count - 1
+          previous = set[index]
+          current = set[index + 1]
 
           # Swap
-          if current < previous
-            numbers[index] = current
-            numbers[index + 1] = previous
-          end
+          swap(current, previous, index) if current < previous
 
           # Increase index to reference next pair in array
           index += 1
         end
       end
 
-      return numbers
+      set
+    end
+
+    def swap(current, previous, index)
+      set[index] = current
+      set[index + 1] = previous
     end
   end
 end
 
-# bubble_sort = SortingSuite::BubbleSort.new([4, 2, 5, 3, 1])
-# bubble_sort.sort
+bubble_sort = SortingSuite::BubbleSort.new([4, 2, 5, 3, 1])
+bubble_sort.sort
+
+bubble_letter_sort = SortingSuite::BubbleSort.new(%w(d a b c))
+bubble_letter_sort.sort
