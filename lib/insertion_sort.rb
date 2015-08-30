@@ -11,7 +11,6 @@ module SortingSuite
       sorted = []
 
       numbers.each do |number|
-
         inserted = false
 
         if sorted.empty?
@@ -21,7 +20,6 @@ module SortingSuite
 
         # Compare each element in the array
         index = 0
-        sorted_digit = sorted[index]
 
         (sorted.count).times do
           if inserted == true
@@ -35,13 +33,10 @@ module SortingSuite
         end
 
         sorted << number if inserted == false
-
       end
 
       sorted
     end
-
-
   end
 end
 
