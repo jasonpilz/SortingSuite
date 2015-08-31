@@ -47,6 +47,11 @@ class BubbleSortTest < Minitest::Test
     assert_equal [0, 1, 2, 5], bubble_sort.sort
   end
 
+  def test_sort_array_of_four_reversed
+    bubble_sort = SortingSuite::BubbleSort.new([8, 7, 6, 5])
+    assert_equal [5, 6, 7, 8], bubble_sort.sort
+  end
+
   def test_sort_array_of_five_already_sorted
     bubble_sort = SortingSuite::BubbleSort.new([3, 4, 5, 6, 7])
     assert_equal [3, 4, 5, 6, 7], bubble_sort.sort

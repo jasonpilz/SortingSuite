@@ -10,6 +10,7 @@ module SortingSuite
     def sort
       sorted = []
 
+      # Take each number in the given array
       numbers.each do |number|
         inserted = false
 
@@ -18,7 +19,7 @@ module SortingSuite
           inserted = true
         end
 
-        # Compare each element in the array
+        # Compare the number to each sorted number and insert
         index = 0
 
         (sorted.count).times do
@@ -40,8 +41,6 @@ module SortingSuite
   end
 end
 
-insertion_sort = SortingSuite::InsertionSort.new([3, 2, 1])
-insertion_sort.sort
+SortingSuite::InsertionSort.new([3, 2, 1]).sort
 
-insertion_sort = SortingSuite::InsertionSort.new([2, 5, 4, 1, 3])
-insertion_sort.sort
+SortingSuite::InsertionSort.new([2, 5, 4, 1, 3]).sort

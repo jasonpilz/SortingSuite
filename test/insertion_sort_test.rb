@@ -37,6 +37,11 @@ class InsertionSortTest < Minitest::Test
     assert_equal [3, 5, 6, 7], insertion_sort.sort
   end
 
+  def test_sort_array_of_four_reversed
+    insertion_sort = SortingSuite::InsertionSort.new([9, 8, 7, 6])
+    assert_equal [6, 7, 8, 9], insertion_sort.sort
+  end
+
   def test_sort_array_of_four_not_sorted
     insertion_sort = SortingSuite::InsertionSort.new([5, 3, 4, 1])
     assert_equal [1, 3, 4, 5], insertion_sort.sort

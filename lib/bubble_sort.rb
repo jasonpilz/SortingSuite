@@ -32,8 +32,6 @@ module SortingSuite
   end
 end
 
-bubble_sort = SortingSuite::BubbleSort.new([4, 2, 5, 3, 1])
-bubble_sort.sort
+SortingSuite::BubbleSort.new([4, 2, 5, 3, 1]).sort
 
-bubble_letter_sort = SortingSuite::BubbleSort.new(%w(d a b c))
-bubble_letter_sort.sort
+SortingSuite::BubbleSort.new(%w(d a b c)).sort
